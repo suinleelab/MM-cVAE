@@ -17,7 +17,7 @@ class cVAE(pl.LightningModule):
         self.salient_latent_size = salient_latent_size
         self.background_latent_size = background_latent_size
 
-        bias = False
+        bias = True
         self.z_h = nn.Linear(input_dim, 400, bias=bias)
         self.z_mu = nn.Linear(400, background_latent_size, bias=bias)
         self.z_var = nn.Linear(400, background_latent_size, bias=bias)
